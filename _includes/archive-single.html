@@ -40,15 +40,18 @@
 
         {% if post.collection == 'teaching' %}
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.collection == 'publications' %}
-          <p>
-          {% if post.status == 'preprint' %}
-            Preprint on <i>{{ post.venue }}</i>
-            {% if post.arxiv_id %}
-              [<a href="https://arxiv.org/abs/{{ post.arxiv_id }}" target="_blank" rel="noopener noreferrer">arXiv:{{ post.arxiv_id }}</a>]
-            {% endif %}
+        {% if post.status == 'preprint' %}
+          Preprint on 
+          <i>
+          {% if post.arxiv_id %}
+            <a href="https://arxiv.org/abs/{{ post.arxiv_id }}" target="_blank" rel="noopener noreferrer">{{ post.venue }}:{{ post.arxiv_id }}</a>
           {% else %}
-            Published in <i>{{ post.venue }}</i>
+            {{ post.venue }}
+          {% endif %}
+          </i>
+        {% else %}
+          Published in <i>{{ post.venue }}</i>
+        {% endif %}
           {% endif %}
           , {{ post.date | default: "1900-01-01" | date: "%Y" }}
           </p>
