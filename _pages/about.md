@@ -17,6 +17,10 @@ Research Interests
 Working Papers
 ======
 
+Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator
+*Beier Luo*, *Shuoyuan Wang*, *Yixuan Li*, *Hongxin Wei^{*}*
+[[Paper]](https://arxiv.org/pdf/2505.16690)
+
 Selected Publications
 ======
 
