@@ -16,7 +16,7 @@ Research Interests
 
 Working Papers
 ======
-($^*$ *Corresponding author*)
+(* *Corresponding author*)
 
 - **Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator**<br>
   *Beier Luo*, *Shuoyuan Wang*, *Yixuan Li*, *Hongxin Wei*<sup>*</sup><br>
