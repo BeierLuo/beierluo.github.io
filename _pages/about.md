@@ -12,7 +12,7 @@ I am a first year graduate student from Southern University of Science and Techn
 Research Interests
 ======
 - Reliable Machine Learning: confidence calibration, conformal prediction
-- Large Language Models: speculative decoding, test-time adaptation
+- Large Language Models: speculative decoding
 
 Working Papers
 ======
