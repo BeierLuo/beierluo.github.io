@@ -16,7 +16,7 @@ Education
 
 Research experience
 ======
-* Sep 23 - Present: Machine Learning Group
+* Sep 2023 - Present: Machine Learning Group
   * Southern University of Science and Technology
   * Research includes: Confidence Calibration, Learning to Defer
   * Supervisor: Hongxin Wei
