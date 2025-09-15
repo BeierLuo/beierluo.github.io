@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* M.S. in Statistics and Data Science, GitHub University, 2026 (expected)
+* M.S. in Statistics, Southern University of Science and Technology, 2026 (expected)
 * B.S. in Statistics, Southern University of Science and Technology, 2024
 
 Research experience
