@@ -23,7 +23,7 @@ Working Papers
 ( † denotes equal contribution. )
 
 - **Unlocking the Pre-Trained Model as a Dual-Alignment Calibrator for Post-Trained LLMs**<br>
-  *Cheng Wang* <sup>†</sup>, ***Beier Luo*** <sup>†</sup> , *Hongxin Wei*, *Yixuan Li*, *Xuefeng Du* <br>
+  *Cheng Wang*<sup>†</sup>, ***Beier Luo***<sup>†</sup>, *Hongxin Wei*, *Yixuan Li*, *Xuefeng Du* <br>
   
 
 Selected Publications
