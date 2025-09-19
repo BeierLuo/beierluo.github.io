@@ -1,9 +1,9 @@
 ---
 title: "Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator"
 collection: publications
-status: preprint
-category: arxiv
-venue: "arXiv"
+status: published
+category: conference
+venue: "The Thirty-ninth Annual Conference on Neural Information Processing Systems"
 arxiv_id: "2505.16690"
 permalink: /publication/2025-5-22-pre-calibration
 date: 2025-5-22
