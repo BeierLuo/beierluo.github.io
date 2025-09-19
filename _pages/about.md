@@ -20,10 +20,10 @@ I’m always excited to explore new research directions and am open to collabora
 
 Working Papers
 ======
-( * denotes equal contribution. )
+( † denotes equal contribution. )
 
 - **Unlocking the Pre-Trained Model as a Dual-Alignment Calibrator for Post-Trained LLMs**<br>
-  *Cheng Wang* <sup>*</sup> , *Beier Luo* <sup>*</sup> , *Hongxin Wei*, *Yixuan Li*, *Xuefeng Du* <br>
+  *Cheng Wang <sup>†</sup> , **Beier Luo** <sup>†</sup> , Hongxin Wei, Yixuan Li, Xuefeng Du* <br>
   
 
 Selected Publications
@@ -31,7 +31,7 @@ Selected Publications
 
 - **Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator**<br>
   NeurIPS 25 <br>
-  *Beier Luo*, *Shuoyuan Wang*, *Yixuan Li*, *Hongxin Wei*  <br>
+  ***Beier Luo**, Shuoyuan Wang, Yixuan Li, Hongxin Wei*  <br>
   [[Paper]](https://arxiv.org/pdf/2505.16690)
 
 
