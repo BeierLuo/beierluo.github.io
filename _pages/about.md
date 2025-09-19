@@ -22,7 +22,7 @@ Working Papers
 ======
 ( * *Corresponding author* )
 
-- **Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator**<br>
+- **Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator** NeurIPS 25<br>
   *Beier Luo*, *Shuoyuan Wang*, *Yixuan Li*, *Hongxin Wei* <sup>*</sup><br>
   [[Paper]](https://arxiv.org/pdf/2505.16690)
 
