@@ -1,7 +1,7 @@
 ---
 title: 'Review of Advanced Probability'
 date: 2025-1-14
-permalink: /posts/2012/08/blog-post-1/
+permalink: /posts/2025/01/blog-post-1/
 tags:
   - Adavanced Probability
 ---
