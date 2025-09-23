@@ -392,6 +392,19 @@
     color: inherit;
     text-decoration: none;
   }
+
+  .grid__wrapper {
+    display: block;
+  }
+
+  .grid__item {
+    width: 100%;
+    max-width: none;
+    float: none;
+    clear: both;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .page__related-title {
