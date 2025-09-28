@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hello! I am a second-year graduate student from Southern University of Science and Technology (SUSTech), under the supervision of [Prof. Hongxin Wei](https://hongxin001.github.io/). I also received my Bachelor’s degree in Statistics from SUSTech.
+Hello! I am a second-year graduate student from Southern University of Science and Technology (SUSTech), under the supervision of [Dr. Hongxin Wei](https://hongxin001.github.io/). I will be joining the Radio Lab at Nanyang Technological University as a PhD student in Fall 2026, under the supervision of [Dr. Xuefeng Du](https://d12306.github.io/). I also received my Bachelor’s degree in Statistics from SUSTech.
 
 Research Interests
 ======
