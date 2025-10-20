@@ -368,6 +368,16 @@
   background: var(--color-surface-strong);
 }
 
+.working-paper-item {
+  cursor: default;
+}
+
+.working-paper-item:hover {
+  transform: none;
+  border-color: var(--color-border);
+  background: var(--color-surface);
+}
+
 .writing-title {
   display: block;
   font-weight: 600;
