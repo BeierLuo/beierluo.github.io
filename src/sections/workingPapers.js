@@ -26,6 +26,7 @@ export default function renderWorkingPapers({ id = "working-papers", label = "Wo
   return `
     <section id="${id}" class="section" aria-labelledby="${headingId}">
       <h2 id="${headingId}" class="section-label">${renderInlineMarkdown(label)}</h2>
+      <p class="section-subtext">${renderInlineMarkdown("† means equal contribution")}</p>
       <div class="writing working-papers">
         ${items}
       </div>

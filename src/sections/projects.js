@@ -1,27 +1,30 @@
 import { renderInlineMarkdown } from "../utils/markdown.js";
 
-const buildPublication = ({ title, taglineMarkdown, descriptionMarkdown, href, badge }) => {
-  const isAnchor = href.startsWith("#");
-  const attrs = isAnchor
-    ? `href="${href}"`
-    : `href="${href}" target="_blank" rel="noopener noreferrer"`;
-
+const buildPublication = ({ title, taglineMarkdown, descriptionMarkdown, linkMarkdown, badge }) => {
   const subtitle = taglineMarkdown
     ? `<span class="publication-tagline">${renderInlineMarkdown(taglineMarkdown)}</span>`
     : "";
   const description = descriptionMarkdown
     ? `<p>${renderInlineMarkdown(descriptionMarkdown)}</p>`
     : "";
+  const linkMarkup = linkMarkdown
+    ? `<p class="publication-link">${renderInlineMarkdown(linkMarkdown)}</p>`
+    : "";
+
+  const badgeMarkup = badge
+    ? `<span class="writing-meta">${renderInlineMarkdown(badge)}</span>`
+    : "";
 
   return `
-    <a class="writing-item publication-item" ${attrs}>
+    <div class="writing-item publication-item">
       <div>
         <span class="writing-title">${renderInlineMarkdown(title)}</span>
         ${subtitle}
         ${description}
+        ${linkMarkup}
       </div>
-      <span class="writing-meta">${renderInlineMarkdown(badge ?? "")}</span>
-    </a>
+      ${badgeMarkup}
+    </div>
   `;
 };
 

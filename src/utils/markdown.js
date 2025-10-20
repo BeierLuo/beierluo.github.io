@@ -1,6 +1,10 @@
 const INLINE_PATTERNS = [
   { regex: /`([^`]+)`/g, replacer: (match, code) => `<code>${code.trim()}</code>` },
   { regex: /\*\*([^\*]+)\*\*/g, replacer: (match, text) => `<strong>${text}</strong>` },
+  {
+    regex: /\$\^\{?([^\}$]+)\}?\$/g,
+    replacer: (match, content) => `<sup>${content}</sup>`
+  },
   { regex: /\*([^\*]+)\*/g, replacer: (match, text) => `<em>${text}</em>` },
   {
     regex: /\[([^\]]+)\]\(([^)]+)\)/g,

@@ -368,16 +368,6 @@
   background: var(--color-surface-strong);
 }
 
-.working-paper-item {
-  cursor: default;
-}
-
-.working-paper-item:hover {
-  transform: none;
-  border-color: var(--color-border);
-  background: var(--color-surface);
-}
-
 .writing-title {
   display: block;
   font-weight: 600;
@@ -390,7 +380,7 @@
   gap: 1rem;
 }
 
-.publication-item .publication-tagline {
+.publication-tagline {
   display: block;
   margin-top: 0.35rem;
   font-size: 0.92rem;
@@ -401,6 +391,11 @@
 .writing-item p {
   margin: 0.35rem 0 0;
   color: var(--color-text-secondary);
+}
+
+.publication-link {
+  margin: 0.6rem 0 0;
+  font-size: 0.92rem;
 }
 
 .footer-heading {

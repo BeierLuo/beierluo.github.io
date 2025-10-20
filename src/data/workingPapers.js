@@ -4,7 +4,7 @@ const workingPapers = {
   entries: [
     {
       title: "Disagreement Isn't Noise: Process-Aware Calibration for Post-trained LMs",
-      authorsMarkdown: "Cheng Wang$^\dagger$, Beier Luo$^\dagger$, Sharon Li, Hongxin Wei, Xuefeng Du"
+      authorsMarkdown: "Cheng Wang$^†$, Beier Luo$^†$, Sharon Li, Hongxin Wei, Xuefeng Du"
     }
   ]
 };
