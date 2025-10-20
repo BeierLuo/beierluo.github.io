@@ -81,8 +81,8 @@ const sections = [
   renderHero(profile),
   renderNow(now),
   renderExperience(experience),
-  renderProjects(projects),
   renderWorkingPapers(workingPapers),
+  renderProjects(projects),
   renderWriting(writing),
   renderFooter(site)
 ];
