@@ -162,14 +162,9 @@
   grid-template-columns: 80px minmax(0, 1fr);
 }
 
-.layout.sidebar-collapsed .sidebar {
-  display: flex;
-  justify-content: center;
-}
-
 .layout.sidebar-collapsed .sidebar-nav {
   gap: 0.8rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .layout.sidebar-collapsed .sidebar-title,
