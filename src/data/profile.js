@@ -1,6 +1,6 @@
 const profile = {
   id: "hero",
-  greeting: "Hi, I am Bale Luo. Welcome to my personal website.",
+  greeting: "Hi, I am Bale (Beier) Luo. Welcome to my personal website.",
   photo: {
     src: "assets/profile.jpg",
     alt: "Portrait of Bale Luo"
