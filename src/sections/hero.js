@@ -8,6 +8,14 @@ const buildLink = ({ label, href }) => {
   return `<a class="pill" ${attrs}>${renderInlineMarkdown(label)}</a>`;
 };
 
+const renderParticleLayer = (count = 12) => {
+  const particles = Array.from(
+    { length: count },
+    (_, index) => `<span class="hero-particle hero-particle-${index + 1}"></span>`
+  ).join("");
+  return `<div class="hero-background" aria-hidden="true">${particles}</div>`;
+};
+
 export default function renderHero(profile) {
   const links = profile.links.map(buildLink).join("");
   const introHtml = renderMarkdown(profile.introMarkdown);
@@ -25,6 +33,7 @@ export default function renderHero(profile) {
 
   return `
     <section id="${sectionId}" class="hero" aria-labelledby="hero-heading">
+      ${renderParticleLayer(14)}
       <div class="hero-header">
         <span id="hero-heading" class="intro-greeting">${renderInlineMarkdown(profile.greeting)}</span>
         ${photoMarkup}

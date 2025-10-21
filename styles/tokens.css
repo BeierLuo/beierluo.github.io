@@ -13,6 +13,14 @@
   --color-pill-bg: #efefef;
   --color-pill-hover: #e4e4e4;
   --shadow-soft: 0 24px 52px rgba(0, 0, 0, 0.08);
+  --hero-surface-bg: rgba(250, 250, 250, 0.95);
+  --hero-surface-bg-strong: rgba(238, 238, 238, 0.78);
+  --color-hero-accent-1: rgba(118, 134, 168, 0.38);
+  --color-hero-accent-2: rgba(186, 200, 224, 0.32);
+  --color-hero-accent-3: rgba(204, 214, 226, 0.28);
+  --color-hero-blockquote-bg: rgba(255, 255, 255, 0.72);
+  --color-hero-blockquote-border: rgba(226, 226, 226, 0.6);
+  --color-hero-blockquote-line: rgba(152, 160, 178, 0.85);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,5 +39,13 @@
     --color-pill-bg: rgba(255, 255, 255, 0.08);
     --color-pill-hover: rgba(255, 255, 255, 0.14);
     --shadow-soft: 0 32px 60px rgba(0, 0, 0, 0.4);
+    --hero-surface-bg: rgba(24, 24, 24, 0.92);
+    --hero-surface-bg-strong: rgba(18, 18, 18, 0.76);
+    --color-hero-accent-1: rgba(116, 132, 168, 0.32);
+    --color-hero-accent-2: rgba(82, 96, 124, 0.36);
+    --color-hero-accent-3: rgba(60, 74, 104, 0.3);
+    --color-hero-blockquote-bg: rgba(26, 28, 34, 0.78);
+    --color-hero-blockquote-border: rgba(48, 52, 64, 0.55);
+    --color-hero-blockquote-line: rgba(132, 148, 188, 0.9);
   }
 }

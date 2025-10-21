@@ -1,5 +1,233 @@
 .hero {
   margin-top: 0;
+  position: relative;
+  padding: clamp(2.4rem, 4vw, 3.25rem);
+  border-radius: 2rem;
+  border: 1px solid var(--color-border);
+  background: linear-gradient(
+      140deg,
+      var(--hero-surface-bg),
+      var(--hero-surface-bg-strong)
+    )
+    border-box;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-background {
+  position: absolute;
+  inset: -18%;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(120% 140% at 14% 8%, var(--color-hero-accent-1) 0%, transparent 60%),
+    radial-gradient(110% 130% at 82% 12%, var(--color-hero-accent-2) 0%, transparent 64%),
+    radial-gradient(120% 140% at 52% 88%, var(--color-hero-accent-3) 0%, transparent 68%);
+  opacity: 0.62;
+  filter: saturate(95%);
+}
+
+.hero-particle {
+  --particle-color: var(--color-hero-accent-1);
+  --particle-x: 6%;
+  --particle-y: -8%;
+  --particle-scale: 1.12;
+  --particle-scale-start: 0.94;
+  --particle-scale-end: 1.05;
+  --particle-duration: 18s;
+  --particle-delay: 0s;
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  background: radial-gradient(circle at 32% 32%, var(--particle-color) 0%, transparent 72%);
+  opacity: 0.48;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  animation: particleFloat var(--particle-duration) ease-in-out infinite;
+  animation-delay: var(--particle-delay);
+  animation-direction: alternate;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition: opacity 180ms ease;
+}
+
+.hero-particle-1 {
+  top: -6%;
+  left: 8%;
+  width: 260px;
+  height: 260px;
+  --particle-color: var(--color-hero-accent-1);
+  --particle-x: 10%;
+  --particle-y: 8%;
+  --particle-scale: 1.18;
+  --particle-duration: 24s;
+  --particle-delay: -6s;
+}
+
+.hero-particle-2 {
+  top: 16%;
+  left: 54%;
+  width: 180px;
+  height: 180px;
+  --particle-color: var(--color-hero-accent-2);
+  --particle-x: -6%;
+  --particle-y: -14%;
+  --particle-scale: 1.08;
+  --particle-duration: 20s;
+  --particle-delay: -3s;
+}
+
+.hero-particle-3 {
+  top: 34%;
+  left: 18%;
+  width: 140px;
+  height: 140px;
+  --particle-color: var(--color-hero-accent-3);
+  --particle-x: 9%;
+  --particle-y: -12%;
+  --particle-scale: 1.12;
+  --particle-duration: 14s;
+}
+
+.hero-particle-4 {
+  top: 60%;
+  left: 6%;
+  width: 180px;
+  height: 180px;
+  --particle-color: var(--color-hero-accent-2);
+  --particle-x: 12%;
+  --particle-y: -6%;
+  --particle-scale: 1.1;
+  --particle-duration: 21s;
+  --particle-delay: -10s;
+}
+
+.hero-particle-5 {
+  top: 68%;
+  left: 46%;
+  width: 220px;
+  height: 220px;
+  --particle-color: var(--color-hero-accent-1);
+  --particle-x: -10%;
+  --particle-y: 10%;
+  --particle-scale: 1.18;
+  --particle-duration: 26s;
+  --particle-delay: -12s;
+}
+
+.hero-particle-6 {
+  top: 30%;
+  left: 76%;
+  width: 210px;
+  height: 210px;
+  --particle-color: var(--color-hero-accent-2);
+  --particle-x: -8%;
+  --particle-y: 12%;
+  --particle-scale: 1.14;
+  --particle-duration: 23s;
+  --particle-delay: -7s;
+}
+
+.hero-particle-7 {
+  top: 70%;
+  left: 72%;
+  width: 170px;
+  height: 170px;
+  --particle-color: var(--color-hero-accent-3);
+  --particle-x: -6%;
+  --particle-y: -10%;
+  --particle-scale: 1.1;
+  --particle-duration: 19s;
+  --particle-delay: -4s;
+}
+
+.hero-particle-8 {
+  top: 8%;
+  left: 80%;
+  width: 120px;
+  height: 120px;
+  --particle-color: var(--color-hero-accent-1);
+  --particle-x: -8%;
+  --particle-y: 10%;
+  --particle-scale: 1.07;
+  --particle-duration: 17s;
+}
+
+.hero-particle-9 {
+  top: -10%;
+  left: 52%;
+  width: 280px;
+  height: 280px;
+  --particle-color: var(--color-hero-accent-3);
+  --particle-x: 12%;
+  --particle-y: 16%;
+  --particle-scale: 1.2;
+  --particle-duration: 28s;
+  --particle-delay: -11s;
+}
+
+.hero-particle-10 {
+  top: 48%;
+  left: -8%;
+  width: 210px;
+  height: 210px;
+  --particle-color: var(--color-hero-accent-1);
+  --particle-x: 16%;
+  --particle-y: -12%;
+  --particle-scale: 1.15;
+  --particle-duration: 25s;
+  --particle-delay: -5s;
+}
+
+.hero-particle-11 {
+  bottom: -12%;
+  left: 58%;
+  width: 250px;
+  height: 250px;
+  --particle-color: var(--color-hero-accent-2);
+  --particle-x: -12%;
+  --particle-y: -8%;
+  --particle-scale: 1.17;
+  --particle-duration: 27s;
+  --particle-delay: -15s;
+}
+
+.hero-particle-12 {
+  top: -12%;
+  left: -6%;
+  width: 190px;
+  height: 190px;
+  --particle-color: var(--color-hero-accent-1);
+  --particle-x: 18%;
+  --particle-y: 14%;
+  --particle-scale: 1.13;
+  --particle-duration: 22s;
+}
+
+.hero-particle-13 {
+  top: 42%;
+  left: 34%;
+  width: 130px;
+  height: 130px;
+  --particle-color: var(--color-hero-accent-3);
+  --particle-x: 8%;
+  --particle-y: -6%;
+  --particle-scale: 1.09;
+  --particle-duration: 16s;
+  --particle-delay: -2s;
+}
+
+.hero-particle-14 {
+  bottom: 16%;
+  left: 22%;
+  width: 160px;
+  height: 160px;
+  --particle-color: var(--color-hero-accent-2);
+  --particle-x: -10%;
+  --particle-y: 14%;
+  --particle-scale: 1.11;
+  --particle-duration: 21s;
+  --particle-delay: -8s;
 }
 
 .hero-header {
@@ -159,7 +387,16 @@
 }
 
 .layout.sidebar-collapsed {
-  grid-template-columns: 80px minmax(0, 1fr);
+  grid-template-columns: clamp(32px, 4.5vw, 48px) minmax(0, 1fr);
+  gap: clamp(2.2rem, 4.4vw, 2.8rem);
+}
+
+.layout.sidebar-collapsed .sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.15rem;
 }
 
 .layout.sidebar-collapsed .sidebar-nav {
@@ -203,10 +440,13 @@
 
 .hero blockquote {
   margin: 1.5rem 0 1.75rem;
-  padding-left: 1.2rem;
-  border-left: 2px dashed var(--color-border);
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--color-hero-blockquote-line);
+  background: var(--color-hero-blockquote-bg);
   color: var(--color-text-secondary);
   font-style: italic;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 0 1px var(--color-hero-blockquote-border);
 }
 
 .hero blockquote p {
@@ -414,6 +654,10 @@
 }
 
 @media (max-width: 960px) {
+  .hero {
+    padding: 2.3rem 1.9rem;
+  }
+
   .hero-header {
     justify-content: space-between;
     align-items: center;
@@ -484,6 +728,10 @@
 }
 
 @media (max-width: 560px) {
+  .hero {
+    padding: 1.95rem 1.5rem;
+  }
+
   .intro-greeting {
     font-size: 1.25rem;
   }
@@ -509,5 +757,22 @@
 
   .writing-meta {
     align-self: flex-start;
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(var(--particle-scale-start, 0.94));
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translate3d(calc(var(--particle-x) * 0.6), calc(var(--particle-y) * 0.6), 0) scale(var(--particle-scale, 1.08));
+    opacity: 0.82;
+  }
+
+  100% {
+    transform: translate3d(var(--particle-x), var(--particle-y), 0) scale(var(--particle-scale-end, 1.05));
+    opacity: 0.58;
   }
 }
