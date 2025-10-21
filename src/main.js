@@ -39,6 +39,7 @@ const navigationItems = [
     label: group.label,
     target: group.id || slugify(group.label)
   })),
+  { label: workingPapers.label, target: workingPapers.id || "working-papers" },
   { label: projects.label, target: projects.id || "projects" },
   { label: writing.label, target: writing.id || "writing" }
 ].filter((item) => item.label && item.target);
