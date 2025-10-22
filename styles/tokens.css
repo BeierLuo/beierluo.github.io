@@ -1,27 +1,27 @@
 :root {
   color-scheme: dark;
   --color-page-bg: #050b1a;
-  --color-surface: #101a2b;
-  --color-surface-strong: #18233a;
-  --color-border: #23324a;
-  --color-border-strong: #36466a;
-  --color-dashed: rgba(255, 255, 255, 0.16);
+  --color-surface: #161616;
+  --color-surface-strong: #1f1f1f;
+  --color-border: #2a2a2a;
+  --color-border-strong: #3a3a3a;
+  --color-dashed: rgba(255, 255, 255, 0.18);
   --color-text-primary: #f5f5f5;
   --color-text-secondary: #bfbfbf;
   --color-text-muted: #8d8d8d;
-  --color-link: #dbe6ff;
+  --color-link: #f0f0f0;
   --color-link-hover: #ffffff;
-  --color-pill-bg: rgba(219, 230, 255, 0.08);
-  --color-pill-hover: rgba(219, 230, 255, 0.16);
-  --shadow-soft: 0 32px 60px rgba(5, 11, 26, 0.55);
-  --hero-surface-bg: rgba(20, 30, 56, 0.9);
-  --hero-surface-bg-strong: rgba(13, 21, 42, 0.76);
-  --color-hero-accent-1: rgba(86, 126, 206, 0.33);
-  --color-hero-accent-2: rgba(52, 82, 148, 0.35);
-  --color-hero-accent-3: rgba(34, 55, 104, 0.32);
-  --color-hero-blockquote-bg: rgba(17, 24, 46, 0.78);
-  --color-hero-blockquote-border: rgba(60, 86, 136, 0.5);
-  --color-hero-blockquote-line: rgba(142, 176, 236, 0.9);
+  --color-pill-bg: rgba(255, 255, 255, 0.08);
+  --color-pill-hover: rgba(255, 255, 255, 0.14);
+  --shadow-soft: 0 32px 60px rgba(0, 0, 0, 0.4);
+  --hero-surface-bg: rgba(24, 24, 24, 0.92);
+  --hero-surface-bg-strong: rgba(18, 18, 18, 0.76);
+  --color-hero-accent-1: rgba(116, 132, 168, 0.32);
+  --color-hero-accent-2: rgba(82, 96, 124, 0.36);
+  --color-hero-accent-3: rgba(60, 74, 104, 0.3);
+  --color-hero-blockquote-bg: rgba(26, 28, 34, 0.78);
+  --color-hero-blockquote-border: rgba(48, 52, 64, 0.55);
+  --color-hero-blockquote-line: rgba(132, 148, 188, 0.9);
 }
 
 :root[data-theme="dark"] {
