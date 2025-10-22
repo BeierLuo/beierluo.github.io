@@ -48,6 +48,51 @@ sidebarRoot.innerHTML = renderSidebar(navigationItems);
 
 const toggleButton = sidebarRoot.querySelector(".sidebar-toggle");
 const toggleLabel = toggleButton?.querySelector(".sidebar-toggle-label");
+const themeToggleButton = sidebarRoot.querySelector(".theme-toggle");
+const themeToggleLabel = themeToggleButton?.querySelector(".theme-toggle-label");
+
+const THEME_STORAGE_KEY = "personal-site-theme";
+const rootElement = document.documentElement;
+
+const readStoredTheme = () => {
+  try {
+    const stored = localStorage.getItem(THEME_STORAGE_KEY);
+    return stored === "light" || stored === "dark" ? stored : null;
+  } catch (error) {
+    return null;
+  }
+};
+
+const persistTheme = (theme) => {
+  try {
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+  } catch (error) {
+    // Ignore storage errors (e.g., private mode)
+  }
+};
+
+const applyTheme = (theme, { persist = false } = {}) => {
+  const nextTheme = theme === "light" ? "light" : "dark";
+  rootElement.dataset.theme = nextTheme;
+
+  if (themeToggleButton) {
+    const isDark = nextTheme === "dark";
+    const labelText = isDark ? "切换到浅色模式" : "切换到深色模式";
+    themeToggleButton.setAttribute("aria-pressed", isDark ? "true" : "false");
+    themeToggleButton.setAttribute("aria-label", labelText);
+
+    if (themeToggleLabel) {
+      themeToggleLabel.textContent = labelText;
+    }
+  }
+
+  if (persist) {
+    persistTheme(nextTheme);
+  }
+};
+
+const initialTheme = readStoredTheme() || "dark";
+applyTheme(initialTheme);
 
 const setSidebarCollapsed = (collapsed) => {
   if (!toggleButton) return;
@@ -75,6 +120,14 @@ if (toggleButton) {
   toggleButton.addEventListener("click", () => {
     const collapsed = !layout.classList.contains("sidebar-collapsed");
     setSidebarCollapsed(collapsed);
+  });
+}
+
+if (themeToggleButton) {
+  themeToggleButton.addEventListener("click", () => {
+    const currentTheme = rootElement.dataset.theme === "light" ? "light" : "dark";
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(nextTheme, { persist: true });
   });
 }
 

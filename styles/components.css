@@ -296,6 +296,48 @@
   color: var(--color-text-primary);
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-page-bg);
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.theme-toggle-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: inset -6px -6px 0 0 var(--color-page-bg);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+html[data-theme="light"] .theme-toggle {
+  color: var(--color-text-secondary);
+}
+
+html[data-theme="light"] .theme-toggle-icon {
+  box-shadow: inset 6px 6px 0 0 var(--color-page-bg);
+  transform: rotate(30deg);
+}
+
 .sidebar-toggle-icon {
   position: relative;
   width: 14px;
@@ -386,6 +428,10 @@
   background: var(--color-text-primary);
 }
 
+.theme-toggle-label {
+  display: inline;
+}
+
 .layout.sidebar-collapsed {
   grid-template-columns: clamp(32px, 4.5vw, 48px) minmax(0, 1fr);
   gap: clamp(2.2rem, 4.4vw, 2.8rem);
@@ -402,6 +448,17 @@
 .layout.sidebar-collapsed .sidebar-nav {
   gap: 0.8rem;
   align-items: flex-start;
+}
+
+.layout.sidebar-collapsed .theme-toggle {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 999px;
+}
+
+.layout.sidebar-collapsed .theme-toggle-label {
+  display: none;
 }
 
 .layout.sidebar-collapsed .sidebar-title,
@@ -677,6 +734,11 @@
     gap: 0.8rem;
   }
 
+  .theme-toggle {
+    width: auto;
+    padding: 0.4rem 0.85rem;
+  }
+
   .sidebar-toggle {
     width: auto;
     padding: 0.4rem 0.85rem;
@@ -686,6 +748,10 @@
   }
 
   .sidebar-toggle-label {
+    display: inline;
+  }
+
+  .theme-toggle-label {
     display: inline;
   }
 

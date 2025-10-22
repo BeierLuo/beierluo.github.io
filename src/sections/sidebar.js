@@ -18,6 +18,10 @@ export default function renderSidebar(items, title = "Contents") {
         <span class="sidebar-toggle-icon" aria-hidden="true"></span>
         <span class="sidebar-toggle-label">Collapse</span>
       </button>
+      <button class="theme-toggle" type="button" aria-pressed="true" aria-label="切换到浅色模式">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+        <span class="theme-toggle-label">切换到浅色模式</span>
+      </button>
       <p class="sidebar-title">${renderInlineMarkdown(title)}</p>
       <ul class="sidebar-list">
         ${listItems}
