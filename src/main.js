@@ -77,7 +77,7 @@ const applyTheme = (theme, { persist = false } = {}) => {
 
   if (themeToggleButton) {
     const isDark = nextTheme === "dark";
-    const labelText = isDark ? "切换到浅色模式" : "切换到深色模式";
+    const labelText = isDark ? "Switch to Light Mode" : "Switch to Dark Mode";
     themeToggleButton.setAttribute("aria-pressed", isDark ? "true" : "false");
     themeToggleButton.setAttribute("aria-label", labelText);
 
