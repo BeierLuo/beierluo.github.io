@@ -14,11 +14,19 @@ body {
 }
 
 .layout {
-  max-width: 1120px;
+  --layout-max-width: 1240px;
+  --layout-gap: clamp(2.2rem, 4vw, 3rem);
+  --layout-padding-inline: clamp(0.9rem, 2.8vw, 1.4rem);
+  --layout-padding-block-start: clamp(2.6rem, 5.2vw, 3.4rem);
+  --layout-padding-block-end: clamp(3rem, 5.8vw, 3.8rem);
+  --sidebar-collapsed-width: clamp(32px, 4.5vw, 48px);
+  --sidebar-collapsed-gap: clamp(1.9rem, 3.8vw, 2.6rem);
   margin: 0 auto;
-  padding: 3.5rem 1.5rem 4rem;
+  max-width: var(--layout-max-width);
+  padding: var(--layout-padding-block-start) var(--layout-padding-inline)
+    var(--layout-padding-block-end);
   display: grid;
-  gap: 3rem;
+  gap: var(--layout-gap);
   grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
   align-items: flex-start;
 }
@@ -84,8 +92,14 @@ a:hover {
 @media (max-width: 960px) {
   .layout {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    padding: 2.8rem 1.25rem 3.5rem;
+    --layout-gap: clamp(1.8rem, 6vw, 2.4rem);
+    --layout-padding-inline: clamp(0.9rem, 4.5vw, 1.3rem);
+    --layout-padding-block-start: clamp(2.2rem, 6.8vw, 2.8rem);
+    --layout-padding-block-end: clamp(2.8rem, 7.2vw, 3.3rem);
+  }
+
+  .layout.sidebar-collapsed {
+    padding-right: var(--layout-padding-inline);
   }
 }
 
