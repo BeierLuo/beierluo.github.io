@@ -694,15 +694,20 @@ html[data-theme="light"] .theme-toggle-icon {
   color: var(--color-text-secondary);
 }
 
-.writing-meta-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.6rem;
-}
-
 .writing-link {
   text-decoration: none;
+}
+
+.writing-meta-row {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.writing-meta-row .writing-meta {
+  margin: 0;
 }
 
 .publication-link {
@@ -866,13 +871,8 @@ html[data-theme="light"] .theme-toggle-icon {
     flex-direction: column;
   }
 
-  .writing-meta-group {
-    align-items: flex-start;
+  .writing-meta-row {
     width: 100%;
-  }
-
-  .writing-meta {
-    align-self: flex-start;
   }
 }
 

@@ -12,7 +12,6 @@ const buildWriting = ({ title, descriptionMarkdown, date, href, linkLabel = "Lin
   const description = descriptionMarkdown
     ? `<p>${renderInlineMarkdown(descriptionMarkdown)}</p>`
     : "";
-  const dateMarkup = date ? `<span class="writing-meta">${renderInlineMarkdown(date)}</span>` : "";
   const linkMarkup = href
     ? (() => {
         const safeHref = escapeHtml(href);
@@ -25,9 +24,10 @@ const buildWriting = ({ title, descriptionMarkdown, date, href, linkLabel = "Lin
         return `<a class="link-button writing-link" ${attrs}>${safeLabel}</a>`;
       })()
     : "";
-  const asideMarkup =
-    dateMarkup || linkMarkup
-      ? `<div class="writing-meta-group">${dateMarkup}${linkMarkup}</div>`
+  const dateMarkup = date ? `<span class="writing-meta">${renderInlineMarkdown(date)}</span>` : "";
+  const metaMarkup =
+    linkMarkup || dateMarkup
+      ? `<div class="writing-meta-row">${[linkMarkup, dateMarkup].filter(Boolean).join("")}</div>`
       : "";
 
   return `
@@ -35,8 +35,8 @@ const buildWriting = ({ title, descriptionMarkdown, date, href, linkLabel = "Lin
       <div>
         <span class="writing-title">${renderInlineMarkdown(title)}</span>
         ${description}
+        ${metaMarkup}
       </div>
-      ${asideMarkup}
     </div>
   `;
 };
