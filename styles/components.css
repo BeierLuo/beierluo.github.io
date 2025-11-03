@@ -696,7 +696,37 @@ html[data-theme="light"] .theme-toggle-icon {
 
 .publication-link {
   margin: 0.6rem 0 0;
-  font-size: 0.92rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.publication-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: var(--color-pill-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-link);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.publication-button:hover,
+.publication-button:focus-visible {
+  background: var(--color-pill-hover);
+  border-color: var(--color-border-strong);
+  color: var(--color-link-hover);
+  transform: translateY(-1px);
+}
+
+.publication-button:focus-visible {
+  outline: 2px solid var(--color-border-strong);
+  outline-offset: 2px;
 }
 
 .footer-heading {

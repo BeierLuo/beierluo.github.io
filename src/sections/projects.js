@@ -1,13 +1,46 @@
 import { renderInlineMarkdown } from "../utils/markdown.js";
 
-const buildPublication = ({ title, taglineMarkdown, descriptionMarkdown, linkMarkdown, badge }) => {
+const buildPublication = ({
+  title,
+  taglineMarkdown,
+  descriptionMarkdown,
+  linkMarkdown,
+  links = [],
+  badge
+}) => {
+  const escapeHtml = (value = "") =>
+    String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+
+  const buildLinkButton = ({ label, href }) => {
+    if (!label || !href) {
+      return "";
+    }
+
+    const safeLabel = escapeHtml(label);
+    const safeHref = escapeHtml(href);
+    const isExternal = /^https?:\/\//i.test(href);
+    const attrs = isExternal ? ' target="_blank" rel="noopener noreferrer"' : "";
+
+    return `<a class="publication-button" href="${safeHref}"${attrs}>${safeLabel}</a>`;
+  };
+
   const subtitle = taglineMarkdown
     ? `<span class="publication-tagline">${renderInlineMarkdown(taglineMarkdown)}</span>`
     : "";
   const description = descriptionMarkdown
     ? `<p>${renderInlineMarkdown(descriptionMarkdown)}</p>`
     : "";
-  const linkMarkup = linkMarkdown
+  const linkButtons = Array.isArray(links)
+    ? links.map(buildLinkButton).filter(Boolean).join("")
+    : "";
+  const linkMarkup = linkButtons
+    ? `<p class="publication-link">${linkButtons}</p>`
+    : linkMarkdown
     ? `<p class="publication-link">${renderInlineMarkdown(linkMarkdown)}</p>`
     : "";
 
