@@ -26,7 +26,7 @@ const buildPublication = ({
     const isExternal = /^https?:\/\//i.test(href);
     const attrs = isExternal ? ' target="_blank" rel="noopener noreferrer"' : "";
 
-    return `<a class="publication-button" href="${safeHref}"${attrs}>${safeLabel}</a>`;
+    return `<a class="link-button" href="${safeHref}"${attrs}>${safeLabel}</a>`;
   };
 
   const subtitle = taglineMarkdown

@@ -694,6 +694,17 @@ html[data-theme="light"] .theme-toggle-icon {
   color: var(--color-text-secondary);
 }
 
+.writing-meta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.writing-link {
+  text-decoration: none;
+}
+
 .publication-link {
   margin: 0.6rem 0 0;
   display: flex;
@@ -701,7 +712,7 @@ html[data-theme="light"] .theme-toggle-icon {
   gap: 0.6rem;
 }
 
-.publication-button {
+.link-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -716,15 +727,15 @@ html[data-theme="light"] .theme-toggle-icon {
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.publication-button:hover,
-.publication-button:focus-visible {
+.link-button:hover,
+.link-button:focus-visible {
   background: var(--color-pill-hover);
   border-color: var(--color-border-strong);
   color: var(--color-link-hover);
   transform: translateY(-1px);
 }
 
-.publication-button:focus-visible {
+.link-button:focus-visible {
   outline: 2px solid var(--color-border-strong);
   outline-offset: 2px;
 }
@@ -853,6 +864,11 @@ html[data-theme="light"] .theme-toggle-icon {
 
   .writing-item {
     flex-direction: column;
+  }
+
+  .writing-meta-group {
+    align-items: flex-start;
+    width: 100%;
   }
 
   .writing-meta {
