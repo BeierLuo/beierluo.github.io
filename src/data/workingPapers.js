@@ -4,7 +4,7 @@ const workingPapers = {
   entries: [
     {
       title: "Unlocking the Pre-Trained Model as a Dual-Alignment Calibrator for Post-Trained LLMs",
-      authorsMarkdown: "Cheng Wang$^†$, Beier Luo$^†$, Hongxin Wei, Sharon Li, Xuefeng Du"
+      authorsMarkdown: "Beier Luo, Cheng Wang, Hongxin Wei, Sharon Li, Xuefeng Du"
     }
   ]
 };
