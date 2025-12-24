@@ -8,7 +8,7 @@ const experience = [
         company: "Nanyang Technological University",
         period: "2026 (expected)",
         descriptionMarkdown:
-          "I will join the Radio Lab under the supervision of [Dr. Xuefeng Du](https://d12306.github.io/) with a research focus on trustworthy machine learning."
+          "I will join the Radio Lab under the supervision of [Dr. Sean Du](https://d12306.github.io/) with a research focus on trustworthy machine learning."
       },
       {
         role: "MSc in Statistics",
