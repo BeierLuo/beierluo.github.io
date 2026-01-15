@@ -432,15 +432,6 @@ html[data-theme="light"] .theme-toggle-icon {
   display: inline;
 }
 
-.layout.sidebar-collapsed {
-  grid-template-columns: var(--sidebar-collapsed-width) minmax(0, 1fr);
-  gap: var(--sidebar-collapsed-gap);
-  padding-right: calc(
-    var(--layout-padding-inline) + var(--sidebar-collapsed-width) +
-      var(--sidebar-collapsed-gap)
-  );
-}
-
 .layout.sidebar-collapsed .sidebar {
   display: flex;
   flex-direction: column;

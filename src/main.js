@@ -91,7 +91,7 @@ const applyTheme = (theme, { persist = false } = {}) => {
   }
 };
 
-const initialTheme = readStoredTheme() || "dark";
+const initialTheme = readStoredTheme() || "light";
 applyTheme(initialTheme);
 
 const setSidebarCollapsed = (collapsed) => {
