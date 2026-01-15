@@ -264,9 +264,11 @@
 }
 
 .sidebar {
-  position: sticky;
+  position: fixed;
   top: 3.5rem;
-  align-self: flex-start;
+  left: clamp(0.9rem, 2.8vw, 1.4rem);
+  width: var(--sidebar-width);
+  z-index: 10;
 }
 
 .sidebar-nav {
@@ -438,6 +440,7 @@ html[data-theme="light"] .theme-toggle-icon {
   align-items: center;
   justify-content: center;
   padding-top: 0.15rem;
+  width: var(--sidebar-collapsed-width);
 }
 
 .layout.sidebar-collapsed .sidebar-nav {

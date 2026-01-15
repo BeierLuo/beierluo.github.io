@@ -28,7 +28,7 @@ body {
     var(--layout-padding-block-end);
   display: grid;
   gap: var(--layout-gap);
-  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: flex-start;
 }
 
