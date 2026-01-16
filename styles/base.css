@@ -19,9 +19,6 @@ body {
   --layout-padding-inline: clamp(0.9rem, 2.8vw, 1.4rem);
   --layout-padding-block-start: clamp(2.6rem, 5.2vw, 3.4rem);
   --layout-padding-block-end: clamp(3rem, 5.8vw, 3.8rem);
-  --sidebar-width: clamp(180px, 20vw, 240px);
-  --sidebar-collapsed-width: clamp(32px, 4.5vw, 48px);
-  --sidebar-collapsed-gap: clamp(1.9rem, 3.8vw, 2.6rem);
   margin: 0 auto;
   max-width: var(--layout-max-width);
   padding: var(--layout-padding-block-start) var(--layout-padding-inline)
@@ -97,10 +94,6 @@ a:hover {
     --layout-padding-inline: clamp(0.9rem, 4.5vw, 1.3rem);
     --layout-padding-block-start: clamp(2.2rem, 6.8vw, 2.8rem);
     --layout-padding-block-end: clamp(2.8rem, 7.2vw, 3.3rem);
-  }
-
-  .layout.sidebar-collapsed {
-    padding-right: var(--layout-padding-inline);
   }
 }
 
