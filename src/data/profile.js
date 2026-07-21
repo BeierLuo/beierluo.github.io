@@ -8,7 +8,7 @@ const profile = {
   introMarkdown: `
 > My Chinese name is 贝尔 (Beier), which is pronounced similarly to “Bale”, so my English name became **Bale Luo**.
 
-I am a final-year graduate student from Southern University of Science and Technology (SUSTech), under the supervision of [Dr. Hongxin Wei](https://hongxin001.github.io/). I am excited to join the Radio Lab at Nanyang Technological University as a PhD student in Fall 2026, under the supervision of [Dr. Sean Du](https://d12306.github.io/). I earned my Bachelor's degree in Statistics from SUSTech.
+I am a first-year PhD student at Nanyang Technological University, supervised by [Dr. Sean Du](https://d12306.github.io/). Previously, I spent two wonderful years as a graduate student in the group of [Dr. Hongxin Wei](https://hongxin001.github.io/) at Southern University of Science and Technology (SUSTech). I also earned my Bachelor's degree in Statistics from SUSTech.
 `,
   links: [
     { label: "Mail", href: "mailto:beierluo001@gmail.com" },
