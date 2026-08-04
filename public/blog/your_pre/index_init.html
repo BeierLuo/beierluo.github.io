@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="LLM Calibration, Unsupervised Calibration, Confidence Calibration">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator</title>
+  <!-- Existing links and meta tags -->
+  <style>
+    * {
+        box-sizing: border-box;
+    }
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    .section, .hero {
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px #999;
+        border-radius: 15px;
+        width: 65%;
+        margin: 25px auto;
+    }
+
+    @media (max-width: 768px) {
+        .section, .hero {
+            width: 95%;
+        }
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .footer {
+        padding: 40px 0;
+    }
+
+    figure, .image, .image-caption {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .image-caption {
+        font-size: calc(11.5px + 0.28vw);
+        padding: 10px;
+        text-align: center;
+        line-height: 1.2;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    @media (max-width: 400px) {
+        .image-caption {
+            font-size: 5vw;
+            padding: 5px;
+        }
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+        width: 100%;
+    }
+
+    .footer .container {
+        text-align: center;
+    }
+
+    .footer .columns {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer .content, .footer .column {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+
+    .table.is-hoverable tr:hover {
+        background-color: #f2f2f2 !important;
+    }
+
+    /* Ensure centered images */
+    .image {
+        display: block;
+        margin: 20px auto;
+    }
+
+    /* Larger container for wide tables */
+    .table-container {
+        width: 90%;
+        margin: 20px auto;
+        overflow-x: auto;
+        padding: 10px;
+    }
+
+    /* Responsive math display */
+    .formula-block {
+        text-align: center;
+        margin: 20px 0;
+        overflow-x: auto;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],   
+        displayMath: [['$$', '$$'], ['\\[', '\\]']] 
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<section class="hero space-background has-text-black">
+  <div class="hero-body space-background-overlay">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title has-text-black">Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Beier Luo,</span>
+            <span class="author-block">Shuoyuan Wang,</span>
+            <span class="author-block">Sharon Li,</span>
+            <span class="author-block">Hongxin Wei</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Department of Statistics and Data Science, Southern University of Science and Technology;</span><br>
+            <span class="author-block">Department of Computer Sciences, University of Wisconsin-Madison</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Problem</h2>
+        <div class="content has-text-justified">
+          <p>
+            Post-trained language models (PoLMs) are essential for aligning large language models with human preferences, but they often suffer from over-confidence—assigning high confidence to both correct and incorrect outputs. This undermines reliability, especially in high-stakes domains like medicine and security. While pre-trained language models (PLMs) tend to be well-calibrated, post-training disrupts this property. Traditional calibration methods like temperature scaling require labeled data, which is scarce and expensive to obtain for many real-world tasks. This creates a critical gap: how to calibrate PoLMs effectively without access to labeled data?
+          </p>
+        </div>
+        <figure class="image">
+          <!-- width = 1280, height = 567 -->
+          <img src="assets/Your_Pre-trained_LLM_is_Secretly_an_Unsupervised_Confidence_Calibrator-picture-1.png" style="width: 100%; max-width: 1280px;">
+          <figcaption class="image-caption">
+            Reliability diagram evaluation for pre-trained vs. post-trained models across four modern LLM architectures on MMLU [Hendrycks et al., 2021a]. The post-trained models are trained by multiple post-training techniques, including SFT, RLHF, and DPO. More reliability diagrams of various post-training methods are provided in Appendix A.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose Disagreement-Aware Confidence Alignment (DACA), an unsupervised post-hoc calibration method that leverages the well-calibrated nature of pre-trained models (PLMs) to calibrate post-trained models (PoLMs) using only unlabeled data. Instead of aligning confidence across all examples, DACA selectively uses agreement examples—those where the PLM and PoLM produce the same prediction. This avoids the under-confidence issue caused by prediction disagreement. Formally, given logits from the PoLM $ g(x) $ and softmax outputs from the PLM $ p(x) $, DACA optimizes the temperature $ \tau $ by minimizing KL divergence only on agreement samples:
+          </p>
+          <div class="formula-block">
+            \[
+            \mathcal{L}_{\text{DACA}}(\tau) = \mathbb{E}_{x \sim \mathcal{D}} \left[ \mathbb{1}\{\arg\max_i f_i(x) = \arg\max_i g_i(x)\} \cdot D_{\text{KL}}\left( \sigma(f(x)) \parallel \sigma(g(x)/\tau) \right) \right]
+            \]
+          </div>
+          <p>
+            This ensures that confidence alignment occurs only when the PLM’s confidence is a reliable proxy for correctness.
+          </p>
+        </div>
+        <figure class="image">
+          <!-- width = 1280, height = 327 -->
+          <img src="assets/Your_Pre-trained_LLM_is_Secretly_an_Unsupervised_Confidence_Calibrator-picture-2.png" style="width: 100%; max-width: 1280px;">
+          <figcaption class="image-caption">
+            Under-confidence issue of naive confidence alignment. ( a ): Reliability diagram for Yi-1.59B-Chat on the computer security and college chemistry subjects of MMLU [Hendrycks et al., 2021a]. Results of more models are presented in Appendix D. ( b ): Temperature values of Yi-1.5-9B-Chat under different training epochs when trained separately on the disagreement and agreement sets and the whole dataset. The training process is performed on the computer security and the college chemistry subject of MMLU.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Theory</h2>
+        <div class="content has-text-justified">
+          <p>
+            We show theoretically that naive confidence alignment—aligning PLM and PoLM confidence on all unlabeled data—can lead to under-confidence. When the two models disagree, the PLM’s confidence reflects its own accuracy, not the PoLM’s. Since post-training often improves accuracy, the PoLM may be correct even when the PLM is not, causing the PLM’s confidence to underestimate the PoLM’s true correctness likelihood. This leads to an inflated temperature $ \tau $ during optimization, resulting in under-confidence. Proposition 3.3 shows that on disagreement examples where $ \sigma_c(f(x)) < 1/k $, the gradient of the KL divergence w.r.t. $ \tau $ remains positive, pushing $ \tau $ to larger values. DACA eliminates this effect by excluding disagreement examples, enabling more accurate and stable temperature estimation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments</h2>
+        <div class="content has-text-justified">
+          <p>
+            We evaluate DACA across diverse LLMs—including Llama-3, Gemma-3, Qwen2.5, Yi-1.5, GPT-4o, and DeepSeek-V3—on standard benchmarks like MMLU, MedMCQA, and MathQA. DACA consistently improves calibration, reducing ECE by up to 15.08% across models. On MMLU, it reduces the ECE of Gemma-3-12B-Instruct from 23.68% to 8.60%, outperforming supervised temperature scaling (9.75%). It also excels on MedMCQA, cutting GPT-4o’s ECE from 21.23% to 6.99% using a smaller pre-trained model. DACA outperforms baselines like CAPE and verbalization-based elicitation methods, and remains effective across model sizes and architectures. It is robust to different post-training techniques (SFT, RLHF, DPO), improving calibration across all variants of Llama-3.1-8B.
+          </p>
+        </div>
+        <div class="table-container">
+          <figure class="image">
+            <!-- width = 1280, height = 784 -->
+            <img src="assets/Your_Pre-trained_LLM_is_Secretly_an_Unsupervised_Confidence_Calibrator-table-1.png" style="width: 100%; max-width: 1280px;">
+            <figcaption class="image-caption">
+              Average calibration performance across 57 MMLU subjects for several contemporary PoLMs. "Vanilla" refers to the uncalibrated model. † indicates calibration methods with access to labels. Best results are shown in bold, and the second-best results are presented in italics. Detailed results for a broader range of LLMs are available in the Appendix D.2.
+            </figcaption>
+          </figure>
+        </div>
+        <figure class="image" style="margin-top: 30px;">
+          <!-- width = 1280, height = 277 -->
+          <img src="assets/Your_Pre-trained_LLM_is_Secretly_an_Unsupervised_Confidence_Calibrator-picture-3.png" style="width: 100%; max-width: 1280px;">
+          <figcaption class="image-caption">
+            ECE comparison between our methods and baselines on MedMCQA across varying contemporary LLM families and parameter sizes.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Applications</h2>
+        <div class="content has-text-justified">
+          <p>
+            DACA extends beyond multiple-choice QA to open-ended tasks like TruthfulQA, where confidence is estimated via self-evaluation (P(True)). DACA significantly improves calibration, reducing ECE from 30.955% to 5.244% on Qwen2.5-32B-Instruct. It also enhances selective classification: by better aligning confidence with accuracy, DACA enables safer prediction filtering. As shown, accuracy on high-confidence predictions improves markedly under DACA, especially at higher thresholds, making it ideal for decision-critical applications where reliability trumps coverage.
+          </p>
+        </div>
+        <figure class="image">
+          <!-- width = 904, height = 439 -->
+          <img src="assets/Your_Pre-trained_LLM_is_Secretly_an_Unsupervised_Confidence_Calibrator-picture-4.png" style="width: 100%; max-width: 1280px;">
+          <figcaption class="image-caption">
+            ECE of DACA with different LLMs for the open-ended TruthfulQA benchmark. The lower ECE indicates better calibration performance. Detailed results with more models are provided in Appendix D.
+          </figcaption>
+        </figure>
+        <figure class="image" style="margin-top: 30px;">
+          <!-- width = 900, height = 423 -->
+          <img src="assets/Your_Pre-trained_LLM_is_Secretly_an_Unsupervised_Confidence_Calibrator-picture-5.png" style="width: 100%; max-width: 1280px;">
+          <figcaption class="image-caption">
+            Selective classification accuracy on MedMCQA across different models. Accuracy is reported on subsets of examples with confidence scores above thresholds ranging from 0.55 to 0.95.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{luo2024pretrained,
+      title={Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator},
+      author={Luo, Beier and Wang, Shuoyuan and Li, Sharon and Wei, Hongxin},
+      journal={arXiv preprint arXiv:XXXX.XXXXX},
+      year={2024}
+    }</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a 
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              Creative Commons Attribution-ShareAlike 4.0 International License.
+            </a> 
+            The website template is from the 
+            <a href="https://github.com/nerfies/nerfies.github.io">
+              Nerfies
+            </a> 
+            project page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
