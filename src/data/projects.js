@@ -4,7 +4,7 @@ const projects = {
   entries: [
     {
       title: "Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator",
-      taglineMarkdown: "Beier Luo, Shuoyuan Wang, Sharon Li, Hongxin Wei",
+      taglineMarkdown: "**Beier Luo**, Shuoyuan Wang, Sharon Li, Hongxin Wei",
       descriptionMarkdown: "",
       links: [
         { label: "Paper", href: "https://openreview.net/forum?id=I4PJYZvfW5" },

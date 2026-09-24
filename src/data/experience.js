@@ -8,14 +8,14 @@ const experience = [
         company: "Nanyang Technological University",
         period: "2026 - now",
         descriptionMarkdown:
-          "I will join the Radio Lab under the supervision of [Dr. Sean Du](https://d12306.github.io/) with a research focus on trustworthy machine learning."
+          "I am honored to join the Radio Lab under the supervision of [Dr. Sean Du](https://d12306.github.io/), where my research will focus on trustworthy machine learning."
       },
       {
         role: "MSc in Statistics",
         company: "Southern University of Science and Technology",
         period: "2024 — 2026",
         descriptionMarkdown:
-          "Supervised by [Dr. Hongxin Wei](https://hongxin001.github.io/); exploring confidence calibration and uncertainty estimation for large models."
+          "I spent two wonderful years in [Dr. Hongxin Wei](https://hongxin001.github.io/)'s research group, exploring confidence calibration and uncertainty estimation for large models."
       },
       {
         role: "BSc in Statistics",

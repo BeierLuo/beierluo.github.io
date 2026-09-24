@@ -7,7 +7,7 @@ I am broadly interested in understanding, modeling, and improving the **confiden
 
 My current research directions include:
 
-- **Confidence calibration and uncertainty estimation** for large-scale models,
+- **Confidence calibration and uncertainty estimation** for LLMs,
 - **Detection and mitigation of hallucinations** in LLMs,
 - Theoretical and empirical foundations of **reliable machine learning**.
 `

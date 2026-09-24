@@ -25,38 +25,6 @@ if (!layout) {
   throw new Error('Layout container with class "layout" was not found.');
 }
 
-const THEME_STORAGE_KEY = "personal-site-theme";
-const rootElement = document.documentElement;
-
-const readStoredTheme = () => {
-  try {
-    const stored = localStorage.getItem(THEME_STORAGE_KEY);
-    return stored === "light" || stored === "dark" ? stored : null;
-  } catch (error) {
-    return null;
-  }
-};
-
-const persistTheme = (theme) => {
-  try {
-    localStorage.setItem(THEME_STORAGE_KEY, theme);
-  } catch (error) {
-    // Ignore storage errors (e.g., private mode)
-  }
-};
-
-const applyTheme = (theme, { persist = false } = {}) => {
-  const nextTheme = theme === "light" ? "light" : "dark";
-  rootElement.dataset.theme = nextTheme;
-
-  if (persist) {
-    persistTheme(nextTheme);
-  }
-};
-
-const initialTheme = readStoredTheme() || "light";
-applyTheme(initialTheme);
-
 const sections = [
   renderHero(profile),
   renderNow(now),
