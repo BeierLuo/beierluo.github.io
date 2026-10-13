@@ -1,12 +1,12 @@
 const profile = {
   id: "hero",
-  greeting: "Hi, I am Bale (Beier) Luo. Welcome to my personal website.",
+  greeting: "Hi, I am Beier (Bale) Luo. Welcome to my personal website.",
   photo: {
     src: "assets/profile.jpg",
-    alt: "Portrait of Bale Luo"
+    alt: "Portrait of Beier Luo"
   },
   introMarkdown: `
-> My Chinese name is 贝尔 (Beier), which is pronounced similarly to “Bale”, so my English name became **Bale Luo**.
+> My Chinese name is 贝尔 (Beier), which is pronounced similarly to “Bale”, so I also go by **Bale**.
 
 I am a first-year PhD student at Nanyang Technological University, supervised by [Dr. Sean Du](https://d12306.github.io/). Previously, I spent two wonderful years as a graduate student in the group of [Dr. Hongxin Wei](https://hongxin001.github.io/) at Southern University of Science and Technology (SUSTech). I also earned my Bachelor's degree in Statistics from SUSTech.
 `,

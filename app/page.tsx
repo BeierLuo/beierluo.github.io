@@ -28,7 +28,7 @@ export default function Home() {
     <>
       <header className="site-nav" aria-label="Section navigation">
         <div className="site-nav-inner">
-          <a className="site-brand" href="#hero">Bale Luo</a>
+          <a className="site-brand" href="#hero">Beier Luo</a>
           <nav className="site-nav-links" aria-label="Directory">
             <a href="#hero">About</a>
             <a href="#research">Research</a>

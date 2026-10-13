@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Bale (Beier) Luo • Do Something Amazing",
+  title: "Beier Luo • Do Something Amazing",
   description:
-    "Bale (Beier) Luo's personal academic website and research portfolio in trustworthy machine learning.",
+    "Beier (Bale) Luo's personal academic website and research portfolio in trustworthy machine learning.",
   icons: { icon: "/assets/favicon.svg" },
 };
 
