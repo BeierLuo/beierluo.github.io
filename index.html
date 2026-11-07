@@ -136,7 +136,7 @@
   .pub-card .plinks { margin-top: 4px; }
   .nw { white-space: nowrap; }
   .lead-in { margin: 0 0 2px; }
-  .tldr { font-size: 16.5px; line-height: 1.55; margin: 10px 0 0; }
+  .tldr { font-size: 16.5px; line-height: 1.55; margin: 10px 0 0; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 
   footer {
     margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--rule);
@@ -152,6 +152,7 @@
     .timeline { grid-template-columns: 1fr; row-gap: 4px; }
     .timeline .what { margin-bottom: 14px; }
     .pub-card { grid-template-columns: 1fr; row-gap: 14px; }
+    .tldr { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
   }
 </style>
 </head>
@@ -220,7 +221,7 @@
             <a href="https://github.com/ml-stat-Sustech/Disagreement-Aware-Calibration">code</a>
             <a href="blog/your_pre/your_pre.html">blog</a>
           </div>
-          <p class="tldr"><span class="nw">Post-training</span> makes LLMs <span class="nw">over-confident</span>; we recalibrate them without any labels by aligning their confidence to the still <span class="nw">well-calibrated</span> <span class="nw">pre-trained</span> model, using only the examples on which the two&nbsp;models&nbsp;agree.</p>
+          <p class="tldr">Post-training makes LLMs over-confident; we recalibrate them without any labels by aligning their confidence to the still well-calibrated pre-trained model, using only the examples on which the two models agree.</p>
         </div>
       </article>
     </div>
