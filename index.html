@@ -135,6 +135,7 @@
   .pub-card .title a:hover { color: var(--accent); }
   .pub-card .plinks { margin-top: 4px; }
   .nw { white-space: nowrap; }
+  .lead-in { margin: 0 0 2px; }
   .tldr { font-size: 16.5px; line-height: 1.55; margin: 10px 0 0; }
 
   footer {
@@ -159,7 +160,7 @@
   <header>
     <div>
       <h1>Beier Luo</h1>
-      <p class="tagline">a.k.a. Bale · PhD student, College of Computing and Data Science (CCDS), Nanyang Technological University</p>
+      <p class="tagline">a.k.a. Bale · PhD student<br>College of Computing and Data Science (CCDS), <span class="nw">Nanyang Technological University</span></p>
       <nav class="links">
         <a href="mailto:LUOB0007@e.ntu.edu.sg">email</a>
         <a href="https://scholar.google.com.hk/citations?user=9ePzHOAAAAAJ&hl=zh-CN">scholar</a>
@@ -193,7 +194,8 @@
     <h2>research</h2>
     <p>My research focuses on building <strong>reliable and trustworthy large language models</strong>. I am broadly
       interested in understanding, modeling, and improving the confidence and uncertainty behavior of modern machine
-      learning systems, particularly under distribution shift and open-ended generation. Current directions:</p>
+      learning systems, particularly under distribution shift and open-ended generation.</p>
+    <p class="lead-in"><strong>Current directions</strong></p>
     <ul class="interests">
       <li>confidence calibration and uncertainty estimation for LLMs</li>
       <li>detection and mitigation of hallucinations in LLMs</li>
