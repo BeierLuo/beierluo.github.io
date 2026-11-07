@@ -117,6 +117,23 @@
   .plinks { font-family: var(--sans); font-size: 14px; margin-top: 2px; }
   .plinks a + a::before { content: "·"; color: var(--faint); margin: 0 8px; }
 
+  /* selected publications: figure left, info right, one-line summary */
+  .pub-cards { display: flex; flex-direction: column; gap: 36px; }
+  .pub-card { display: grid; grid-template-columns: 300px 1fr; column-gap: 28px; align-items: center; }
+  @media (min-width: 960px) {
+    main { max-width: 900px; }
+    .pub-card { grid-template-columns: 400px 1fr; column-gap: 32px; }
+  }
+  .pub-fig {
+    display: block; background: #fff; border: 1px solid var(--rule); border-radius: 6px;
+    padding: 8px; line-height: 0;
+  }
+  .pub-fig img { width: 100%; height: auto; display: block; }
+  .pub-card .title a { color: var(--text); }
+  .pub-card .title a:hover { color: var(--accent); }
+  .pub-card .plinks { margin-top: 4px; }
+  .tldr { font-size: 16.5px; line-height: 1.55; margin: 10px 0 0; }
+
   footer {
     margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--rule);
     font-family: var(--sans); font-size: 13px; color: var(--faint);
@@ -130,6 +147,7 @@
     body { font-size: 17px; }
     .timeline { grid-template-columns: 1fr; row-gap: 4px; }
     .timeline .what { margin-bottom: 14px; }
+    .pub-card { grid-template-columns: 1fr; row-gap: 14px; }
   }
 </style>
 </head>
@@ -182,18 +200,25 @@
 
   <section id="publications">
     <h2>selected publications</h2>
-    <ol class="pubs">
-      <li>
-        <div class="title">Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator</div>
-        <div class="authors"><span class="me">Beier Luo</span>, Shuoyuan Wang, Sharon Li, Hongxin Wei</div>
-        <div class="venue">Neural Information Processing Systems (NeurIPS), 2025</div>
-        <div class="plinks">
-          <a href="https://openreview.net/forum?id=I4PJYZvfW5">paper</a>
-          <a href="https://github.com/ml-stat-Sustech/Disagreement-Aware-Calibration">code</a>
-          <a href="blog/your_pre/your_pre.html">blog</a>
+    <div class="pub-cards">
+      <article class="pub-card">
+        <a class="pub-fig" href="https://openreview.net/forum?id=I4PJYZvfW5">
+          <img src="assets/pubs/daca.png" loading="lazy"
+               alt="Reliability diagrams of Llama-3-8B: the pre-trained model is well calibrated (ECE 3.52%), the instruct model is over-confident (ECE 19.00%)">
+        </a>
+        <div>
+          <div class="title"><a href="https://openreview.net/forum?id=I4PJYZvfW5">Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator</a></div>
+          <div class="authors"><span class="me">Beier Luo</span>, Shuoyuan Wang, Sharon Li, Hongxin Wei</div>
+          <div class="venue">Neural Information Processing Systems (NeurIPS), 2025</div>
+          <div class="plinks">
+            <a href="https://openreview.net/forum?id=I4PJYZvfW5">paper</a>
+            <a href="https://github.com/ml-stat-Sustech/Disagreement-Aware-Calibration">code</a>
+            <a href="blog/your_pre/your_pre.html">blog</a>
+          </div>
+          <p class="tldr">Post-training makes LLMs over-confident; we recalibrate them without any labels by aligning their confidence to the still well-calibrated pre-trained model, using only the examples on which the two models agree.</p>
         </div>
-      </li>
-    </ol>
+      </article>
+    </div>
   </section>
 
   <section id="working-papers">
