@@ -86,6 +86,8 @@
   }
   h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); transform: translateY(-6px); }
   p { margin: 0 0 14px; }
+  p, li, .what, .authors, .venue { text-wrap: pretty; }
+  .title, h1 { text-wrap: balance; }
   .muted { color: var(--muted); }
   .note { font-family: var(--sans); font-size: 14px; color: var(--faint); margin-bottom: 18px; }
   ul.interests { padding-left: 22px; margin: 6px 0 0; }
@@ -132,6 +134,7 @@
   .pub-card .title a { color: var(--text); }
   .pub-card .title a:hover { color: var(--accent); }
   .pub-card .plinks { margin-top: 4px; }
+  .nw { white-space: nowrap; }
   .tldr { font-size: 16.5px; line-height: 1.55; margin: 10px 0 0; }
 
   footer {
@@ -215,7 +218,7 @@
             <a href="https://github.com/ml-stat-Sustech/Disagreement-Aware-Calibration">code</a>
             <a href="blog/your_pre/your_pre.html">blog</a>
           </div>
-          <p class="tldr">Post-training makes LLMs over-confident; we recalibrate them without any labels by aligning their confidence to the still well-calibrated pre-trained model, using only the examples on which the two models agree.</p>
+          <p class="tldr"><span class="nw">Post-training</span> makes LLMs <span class="nw">over-confident</span>; we recalibrate them without any labels by aligning their confidence to the still <span class="nw">well-calibrated</span> <span class="nw">pre-trained</span> model, using only the examples on which the two&nbsp;models&nbsp;agree.</p>
         </div>
       </article>
     </div>
