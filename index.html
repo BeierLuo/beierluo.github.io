@@ -81,7 +81,7 @@
   /* ---------- sections ---------- */
   section { margin-top: 56px; }
   h2 {
-    font-weight: 500; font-size: 28px; letter-spacing: -0.01em;
+    font-family: var(--sans); font-weight: 500; font-size: 25px; letter-spacing: -0.02em;
     margin: 0 0 18px; display: flex; align-items: baseline; gap: 12px;
   }
   h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); transform: translateY(-6px); }
@@ -135,7 +135,7 @@
   .pub-card .title a:hover { color: var(--accent); }
   .pub-card .plinks { margin-top: 4px; }
   .nw { white-space: nowrap; }
-  .lead-in { margin: 0 0 2px; }
+  .lead-in { font-family: var(--sans); font-size: 16px; font-weight: 600; margin: 0 0 4px; }
   .tldr { font-size: 16.5px; line-height: 1.55; margin: 10px 0 0; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 
   footer {
@@ -196,7 +196,7 @@
     <p>My research focuses on building <strong>reliable and trustworthy large language models</strong>. I am broadly
       interested in understanding, modeling, and improving the confidence and uncertainty behavior of modern machine
       learning systems, particularly under distribution shift and open-ended generation.</p>
-    <p class="lead-in"><strong>Current directions</strong></p>
+    <p class="lead-in">Current directions</p>
     <ul class="interests">
       <li>confidence calibration and uncertainty estimation for LLMs</li>
       <li>detection and mitigation of hallucinations in LLMs</li>
